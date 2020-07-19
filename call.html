@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Libertas</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+		<link rel="manifest" href="manifest.json">
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="LIbertas">
+		<meta name="apple-mobile-web-app-title" content="LIbertas">
+		<meta name="theme-color" content="#00">
+		<meta name="msapplication-navbutton-color" content="#00">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="msapplication-starturl" content="/">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://source.unsplash.com" rel="preconnect" crossorigin>
+    <link href="https://testnetv3.matic.network" rel="preconnect" crossorigin>
+
+    <link rel="apple-touch-icon" href="icons/icon.png">
+    <link rel="icon" type="image/png" href="icons/icon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Asap:400,700|Roboto+Mono:400,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" >
+    <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
+    <link rel="stylesheet" media="all" href="css/lighthouse.css">
+
+  </head>
+  <body>
+
+    <div class="page">
+      <header class="header">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg" >
+            <a class="navbar-brand" href="./discover.html">
+<div class="navbar-logo">
+                <img class="navbar-pic" src="assets/flbulb.svg" style="filter: invert(1);">
+              </div>
+              <div class="navbar-title">Libertas</div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarDropdown">
+              <div class="d-flex align-items-center">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./discover.html">Videos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./golive.html">Go Live</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./watchlive.html">Watch Live</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./call.html">Call</a>
+                  </li>
+                </ul>
+                <a class="btn btn-blue" href="./account.html">Your Account</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <div class="inner">
+          <div class="main main-dark" style="background-image: url(https://source.unsplash.com/random?dark)">
+            <div class="container">
+              <div class="">
+                <h1 class="main-title">Talk to Anyone, Anywhere </br>Unstoppable.</h1>
+                <br/><br/><br/>
+              </div>
+            </div>
+          </div>
+        <div class="work">
+            <div class="container" style="padding-bottom: 40px;">
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="card">
+                      <video id="their-video" autoplay="" controls></video>
+                    </div>
+
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card" style="margin-bottom: 10px;">
+                      <video id="my-video" muted="true" autoplay="" controls></video>
+                    </div>
+                    <div class="card" style="display: none;" id="step1">
+                      <p>Please click `allow` on the top of the screen so we can access your webcam and microphone for calls.</p>
+                      <div id="step1-error">
+                        <p>Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.</p>
+                        <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
+                      </div>
+                    </div>
+                    <div class="card pd-30" style="" id="step2">
+                      <label>Your ID : <span id="my-id">Loading...</span></label>
+                      <input type="text" class="form-control" placeholder="Call user ID" required="" id="callto-id">
+                        <a id="make-call" style="color:black;" class="btn btn-primary">Call</a>
+                    </div>
+                    <div class="card" style="display: none;" id="step3">
+                      <div class="form-group">
+                          <label>In call with : <span id="their-id"></span></label>
+                        </div>
+                        <a id="end-call" style="color:black;" class="btn btn-primary">End Call</a>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+                <div class="footer-links text-center">
+                Made with ❤ by <a href="https://anudit.dev" target="_blank">Anudit Nagar</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-links text-center">
+                Powered by :
+                <a href="https://matic.network" target="_blank" style="margin-right: 0px;">Matic Network</a> ·
+                <a href="https://sablier.me" target="_blank" style="margin-right: 0px;">Sablier</a> ·
+                <a href="https://biconomy.io" target="_blank" style="margin-right: 0px;">Biconomy</a>
+              </div>
+            </div>
+        </div>
+        </div>
+      </footer>
+
+    </div>
+
+
+		<script>
+    /*
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('service-worker.js')
+					.then(registration => {
+					console.log('Service Worker is registered', registration);
+					})
+					.catch(err => {
+					console.error('Registration failed:', err);
+					});
+				});
+      }
+    */
+		</script>
+		<script src="js/lib/web3@1.2.11.js"></script>
+    <script src="js/lib/jquery-3.3.1.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/lighthouse.js"></script>
+    <script src="js/lib/peerjs@1.2.0.js"></script>
+    <script src="js/lib/sweetalert2@9.14.0.js"></script>
+
+    <script src="js/call.js"></script>
+
+  </body>
+</html>

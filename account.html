@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Libertas</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#fff">
+		<link rel="manifest" href="manifest.json">
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="LIbertas">
+		<meta name="apple-mobile-web-app-title" content="LIbertas">
+		<meta name="theme-color" content="#00">
+		<meta name="msapplication-navbutton-color" content="#00">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="msapplication-starturl" content="/">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+		<link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin>
+		<link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+		<link href="https://source.unsplash.com" rel="preconnect" crossorigin>
+		<link href="https://testnetv3.matic.network" rel="preconnect" crossorigin>
+
+		<link rel="apple-touch-icon" href="icons/icon.png">
+		<link rel="icon" type="image/png" href="icons/icon.png">
+
+		<link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Asap:400,700|Roboto+Mono:400,700" rel="stylesheet">
+		<link rel="stylesheet" media="all" href="css/bootstrap.min.css">
+		<link rel="stylesheet" media="all" href="css/lighthouse.css">
+	</head>
+	<body>
+		<div class="page">
+			<header class="header">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg">
+						<a class="navbar-brand" href="./discover.html">
+							<div class="navbar-title">Libertas</div>
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarDropdown">
+							<div class="d-flex align-items-center">
+								<ul class="navbar-nav">
+									<li class="nav-item">
+										<a class="nav-link" href="./discover.html">Videos</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./golive.html">Go Live</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./watchlive.html">Watch Live</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./call.html">Call</a>
+									</li>
+								</ul>
+								<div>
+									<a class="btn btn-blue" href="./upload.html">Upload</a>
+								</div>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<div class="inner">
+				<div class="main main-dark" style="background-image: url(https://source.unsplash.com/random?dark);background-position: center;">
+					<div class="container">
+						<div class="main-group">
+							<h1 class="main-title">Your Account</h1>
+						</div>
+					</div>
+				</div>
+				<div class="services" style=" padding: 20px 0 40px; ">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<div class="services-title">
+										<h1 style=" font-size: 3em; " id="userBalance">0.00 </h1>
+										ANC
+									</div>
+									<p>Account Balance</p>
+									<br/>
+									<div class="services-title">
+										<h1 style=" font-size: 3em; " id="faucetBalance">0.00 </h1>
+										ANC
+									</div>
+									<p>Faucet Balance</p>
+									<a class="btn btn-white" id="getFromFaucet">Get from Faucet 🚰</a>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<div class="services-title">
+										<h1 style=" font-size: 3em;" id="allowanceAmt">0.00 </h1>
+										ANC
+										<p>Current Allowance</p>
+									</div>
+									<input class=" form-control" type="number" id="allowanceAmtVal" placeholder="Enter Amount"><br/>
+									<a class="btn btn-white" id="increaseAllowance">🔼 Increase Allowance</a><br/>
+									<a class="btn btn-white" id="setAllowance">✅ Set Allowance</a><br/>
+									<a class="btn btn-white" id="decreaseAllowance">🔽 Decrease Allowance</a>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<div class="services-title" >
+										<h3>About You</h3>
+										<p>Your Name : <span id="creatorName"></span></p>
+									</div>
+									<input class="form-control" type="text" id="creatorNameVal" placeholder="Enter Name"><br/>
+									<a class="btn btn-white" href="#" id="updateCreatorName">Update Name</a>
+									<br/>
+									<img src='' id="creatorImage" style="max-width: 100px;align-self: center;">
+									<div class="box">
+										<input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" style="display:none;"/>
+										<label for="file-1">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+												<path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+											</svg>
+											<span>Choose a file&hellip;</span>
+										</label>
+									</div>
+									<a class="btn btn-white" id="uploadCreatorImage">Upload 🚀</a>
+									<br/>
+									<p id="status"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h2 class="title text-white" style="text-align:center; display: none;" id= "videoFrameTitle">Your Videos</h2>
+				<div class="works js-works" id= "videoFrame" style="display: none;">
+					<div class="works-nav">
+						<div class="container">
+							<a href="#" class="works-link js-works-link active" data-type="works-all">All Works<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-technology">Technology<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-entertainment">Entertainment<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-design">Design<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-ethereum">Ethereum<span class="works-counter">0</span></a>
+						</div>
+					</div>
+					<div class="container">
+						<div class="works-list" id="dvideosList">
+							<!-- <a class="works-item row js-works-item works-education visible" href="video.html">
+								<div class="col-md-4">
+								<div class="theme">Design Systems</div>
+								<h3 class="title">Redefining a Serious Eats Magazine</h3>
+								<div class="works-meta"><strong>Branding, UX Design</strong> · 2019</div>
+								</div>
+								<div class="col-md-8">
+								<div class="works-preview">
+								 <img src=img/w1.jpg srcset="img/w1@2x.jpg 2x" alt="" class=works-pic>
+								</div>
+								</div>
+								</a> -->
+						</div>
+					</div>
+				</div>
+				<h2 class="title text-white" style="text-align:center;">Publish a New Ad</h2>
+				<div class="services" style=" padding: 20px 0 40px; ">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<div class="services-title">
+										<h2>Your Ad Profile <br/><span class="label">Step 1</span></h2>
+										<h1 id="advAdCnt"  style=" font-size: 3em;">0</h1>
+										<p>Ads Created by,  <span id="advName"></span></p>
+									</div>
+									<div id="advRegisterFrame" style="display:none;">
+										<input class="form-control" type="text" id="advNameVal" placeholder="Advertiser Name">
+										<a class="btn btn-white" id="registerAdv">Register Profile</a>
+									</div>
+									<div class="services-title">
+										<h1 style=" font-size: 3em;" id="advAdBudgetLeft">0.00 </h1>
+										ANC
+									</div>
+									<p>Overall Ad Buget Left</p>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Pick An Ad <br/><span class="label">Step 2</span></h2>
+									<br/>
+									<img src='' id="adImage" style="max-width: 100px;align-self: center;">
+									<div class="box">
+										<input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-1" style="display:none;"/>
+										<label for="file-2">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+												<path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+											</svg>
+											<span>Choose a file&hellip;</span>
+										</label>
+									</div>
+									<a class="btn btn-white" id="uploadAd">Upload 🚀</a>
+									<br/>
+									<p id="statusUploadAd"></p>
+									<br/>
+									<div class="form-group">
+										<label>Enter a link for your Ad</label>
+										<input type="text" 	class="form-control" placeholder="Enter Link" required="" id="adLink">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Enter Details <br/><span class="label">Step 3</span></h2>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Amount Per Second" required="" id="adRate">
+									</div>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Budget" required="" id="adBudget">
+									</div>
+									<div class="form-group">
+										<label>Choose Category</label>
+										<select class="form-control" id="adCat" required="">
+											<option value='1'>Technology</option>
+											<option value='2'>Entertainment</option>
+											<option value='3'>Design</option>
+											<option value='4'>Ethereum</option>
+										</select>
+									</div>
+									<a class="btn btn-white" id="publishAd">Publish Ad</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h2 class="title text-white" style="text-align:center; display: none;" id= "adsFrameTitle">Your Ads</h2>
+				<div class="works js-works" id= "adsFrame" style="display: none;">
+					<div class="works-nav">
+						<div class="container">
+							<a href="#" class="works-link js-works-link active" data-type="works-all">All Works<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-technology">Technology<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-entertainment">Entertainment<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-design">Design<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-ethereum">Ethereum<span class="works-counter">0</span></a>
+						</div>
+					</div>
+					<div class="container">
+						<div class="works-list" id="adsList">
+							<!-- <a class="works-item row js-works-item works-education visible" href="video.html">
+								<div class="col-md-4">
+								<div class="theme">Design Systems</div>
+								<h3 class="title">Redefining a Serious Eats Magazine</h3>
+								<div class="works-meta"><strong>Branding, UX Design</strong> · 2019</div>
+								</div>
+								<div class="col-md-8">
+								<div class="works-preview">
+								 <img src=img/w1.jpg srcset="img/w1@2x.jpg 2x" alt="" class=works-pic>
+								</div>
+								</div>
+								</a> -->
+						</div>
+					</div>
+				</div>
+				<h2 class="title text-white" style="text-align:center;">Sponsorships</h2>
+				<div class="services" style=" padding: 20px 0 40px; ">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Sponsor a Video</h2>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Ad ID" required="" id="sponsorAdID">
+									</div>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Video Id" required="" id="sponsorVideoID">
+									</div>
+									<a class="btn btn-white" id="sponsorVideoBtn">Sponsor it.</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="footer-links text-center">
+								Made with ❤ by <a href="https://anudit.dev" target="_blank">Anudit Nagar</a>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="footer-links text-center">
+								Powered by :
+								<a href="https://matic.network" target="_blank" style="margin-right: 0px;">Matic Network</a> ·
+								<a href="https://sablier.me" target="_blank" style="margin-right: 0px;">Sablier</a> ·
+								<a href="https://biconomy.io" target="_blank" style="margin-right: 0px;">Biconomy</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script>
+    /*
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('service-worker.js')
+					.then(registration => {
+					console.log('Service Worker is registered', registration);
+					})
+					.catch(err => {
+					console.error('Registration failed:', err);
+					});
+				});
+      }
+    */
+		</script>
+		<script src="js/lib/web3@1.2.11.js"></script>
+		<script src="js/lib/jquery-3.3.1.min.js"></script>
+		<script src="js/lib/bootstrap.min.js"></script>
+		<script src="js/lib/sweetalert2@9.14.0.js"></script>
+		<script src="js/lib/lighthouse.js"></script>
+		<script src="js/lib/ipfs.min.js"></script>
+		<script src="js/lib/mexa@1.5.12.js"></script>
+		<script src="js/globals.js"></script>
+		<script src="js/contract.js"></script>
+		<script src="js/account.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

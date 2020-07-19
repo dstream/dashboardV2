@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Libertas</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#fff">
+		<link rel="manifest" href="manifest.json">
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="LIbertas">
+		<meta name="apple-mobile-web-app-title" content="LIbertas">
+		<meta name="theme-color" content="#00">
+		<meta name="msapplication-navbutton-color" content="#00">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="msapplication-starturl" content="/">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin>
+		<link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+		<link href="https://source.unsplash.com" rel="preconnect" crossorigin>
+		<link href="https://testnetv3.matic.network" rel="preconnect" crossorigin>
+
+		<link rel="apple-touch-icon" href="icons/icon.png">
+		<link rel="icon" type="image/png" href="icons/icon.png">
+
+		<link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Asap:400,700|Roboto+Mono:400,700" rel="stylesheet">
+		<link rel="stylesheet" media="all" href="css/bootstrap.min.css">
+		<link rel="stylesheet" media="all" href="css/lighthouse.css">
+
+	</head>
+	<body>
+		<div class="page">
+			<header class="header">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg">
+						<a class="navbar-brand" href="./discover.html">
+
+							<div class="navbar-title">Libertas</div>
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarDropdown">
+							<div class="d-flex align-items-center">
+								<ul class="navbar-nav">
+									<li class="nav-item">
+										<a class="nav-link" href="./discover.html">Videos</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./golive.html">Go Live</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./watchlive.html">Watch Live</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="./call.html">Call</a>
+									</li>
+								</ul>
+								<a class="btn btn-blue" href="./account.html">My Account</a>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<div class="inner">
+				<div class="main main-dark" style="background-image: url(https://source.unsplash.com/random?dark);background-position: center;">
+					<div class="container">
+						<div class="main-group">
+							<h1 class="main-title">Upload a New Video</h1>
+						</div>
+					</div>
+				</div>
+				<div class="services" style=" padding: 20px 0 40px; ">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12 col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Upload Video</h2>
+                                    <br/>
+                                    <div class="box">
+                                        <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" style="display:none;"/>
+                                        <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+                                    </div>
+                                    <a class="btn btn-white" id="uploadVideo">Upload 🚀</a>
+                                    <br/>
+                                    <p id="status"></p>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Upload Thumbnail</h2>
+                                    <br/>
+                                    <div class="box">
+                                        <input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-1" style="display:none;"/>
+                                        <label for="file-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Choose a file&hellip;</span></label>
+                                    </div>
+                                    <a class="btn btn-white" id="uploadPoster">Upload 🚀</a>
+                                    <br/>
+                                    <p id="status2"></p>
+								</div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Enter Details</h2>
+                                    <br/>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Enter Title" required="" id="videoTitle">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Enter Description" required="" id="videoDesc">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Choose Category</label>
+                                        <select class="form-control" id="videoCat" required="">
+                                            <option value='1'>Technology</option>
+                                            <option value='2'>Entertainment</option>
+                                            <option value='3'>Design</option>
+                                            <option value='4'>Ethereum</option>
+                                        </select>
+                                    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="footer-links text-center">
+								Made with ❤ by <a href="https://anudit.dev" target="_blank">Anudit Nagar</a>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="footer-links text-center">
+								Powered by :
+								<a href="https://matic.network" target="_blank" style="margin-right: 0px;">Matic Network</a> ·
+								<a href="https://sablier.me" target="_blank" style="margin-right: 0px;">Sablier</a> ·
+								<a href="https://biconomy.io" target="_blank" style="margin-right: 0px;">Biconomy</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script>
+    /*
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('service-worker.js')
+					.then(registration => {
+					console.log('Service Worker is registered', registration);
+					})
+					.catch(err => {
+					console.error('Registration failed:', err);
+					});
+				});
+      }
+    */
+		</script>
+		<script src="js/lib/web3@1.2.11.js"></script>
+		<script src="js/lib/jquery-3.3.1.min.js"></script>
+		<script src="js/lib/bootstrap.min.js"></script>
+        <script src="js/lib/lighthouse.js"></script>
+        <script src="js/lib/ipfs.min.js"></script>
+
+		<script src="js/lib/mexa@1.5.12.js"></script>
+		<script src="js/globals.js"></script>
+        <script src="js/contract.js"></script>
+		<script src="js/createvideo.js"></script>
+        <script src="js/index.js"></script>
+
+	</body>
+</html>
