@@ -1,3 +1,7 @@
-.textile
-.textileseed
+PlatformData/
+test/
+access_log
+agent_log
+error_log
+referer_log
 note.txt
