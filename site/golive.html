@@ -18,24 +18,26 @@
 		<meta name="msapplication-starturl" content="/">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://testnetv3.matic.network" rel="preconnect" crossorigin>
+    <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
     <link href="https://source.unsplash.com" rel="preconnect" crossorigin>
-    <link href="https://ipfs.infura.io" rel="preconnect" crossorigin>
+    <link href="https://rpc-mumbai.matic.today" rel="preconnect" crossorigin>
 
     <link rel="apple-touch-icon" href="icons/icon.png">
     <link rel="icon" type="image/png" href="icons/icon.png">
 
     <link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Asap:400,700|Roboto+Mono:400,700" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" >
     <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
     <link rel="stylesheet" media="all" href="css/lighthouse.css">
+
   </head>
-  <body style="background-color: white;">
+  <body>
 
     <div class="page">
-      <header class="header ">
+      <header class="header">
         <div class="container">
-          <nav class="navbar navbar-expand-lg">
+          <nav class="navbar navbar-expand-lg" >
             <a class="navbar-brand" href="./discover.html">
 <div class="navbar-logo">
                 <img class="navbar-pic" src="assets/flbulb.svg" style="filter: invert(1);">
@@ -67,104 +69,71 @@
           </nav>
         </div>
       </header>
-
       <div class="inner">
-        <div class="work">
-          <div class="work-head" id="heroImg" style="background: url(assets/hero1.png), linear-gradient(rgba(0, 0, 0, 0.65) 0%, 50%, rgb(255, 255, 255) 90%);background-size: cover;background-blend-mode: soft-light;">
+          <div class="main main-dark" style="background-image: url(https://source.unsplash.com/random?dark)">
             <div class="container">
-              <div class="row">
-                <div class="col-md-8">
-                  <div class="work-preview">
-                    <style>
-                        video {
-                            width: 100%;
-                            max-width: 100%;
-                            vertical-align: middle;
-                            border-style: none;
-                        }
-                    </style>
-                    <video
-                      id="dVideo"
-                      class=" work-video"
-                      controls
-                      preload="auto"
-                      poster=""
-                      oncontextmenu="return false;"
-                    >
-                    <!-- https://ipfs.infura.io/ipfs/QmfATQNSR2sbFAQwfgycZyzXqYcAT4TXPSeyyMTjekaUR9 -->
-                      <source src="" type="video/mp4">
-                        <p >
-                        To view this video please enable JavaScript, and consider upgrading to a
-                        web browser that supports HTML5
-                      </p>
-                    </video>
-                  </div>
-
-                </div>
-                <div class="col-md-4 hidden-xs">
-                  <div class="services-item" style="margin-top: 40px;margin-bottom: -96px;">
-                    <div class="services-preview">
-                      <img id="adHash" src="" alt="" class="logos-pic">
-                    </div>
-                    <div class="services-title" style="text-align: center;">
-                      Sponsored By <br/>
-                      <strong>
-                        <a id="adLink" href="" style="color:#00f" target="_blank" ></a>
-                      </strong>
-                    </div>
-                  </div>
-                </div>
+              <div class="">
+                <h1 class="main-title">You are Live 🎥</h1>
+                <br/><br/><br/>
               </div>
-
             </div>
           </div>
-          <div class="container">
-            <div class="col-md-8 col-sm-12 col-xs-12">
-              <div class="row">
-                <h1 id="videoTitle">Loading..</h1>
-              </div>
-              <div class="row">
-                <p id="videoDesc">Loading..</p>
-              </div>
-              <div class="row">
-                <div class="col-xs-8">
-                  <div class="blog-head" style=" max-width: 300px; text-align: initial; ">
-                    <div class="user" style=" padding: 10px; ">
-                      <div class="user-preview">
-                        <img src="" id="creatorImage" alt="" class="user-pic">
-                      </div>
-                      <div class="user-group">
-                        <div class="user-proff"><span id="videoViewCnt">0</span> Views</div>
-                        <div class="user-name" id="creatorTitle">Loading..</div>
-                      </div>
+        <div class="work">
+            <div class="container" style="padding-bottom: 40px;">
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="card">
+                      <video id="my-video"  muted="true" autoplay="" controls></video>
                     </div>
 
                   </div>
-                </div>
-                <div class="col-xs-4">
-                  <a id="subscribeBtn" class="btn btn-primary" style="right: 0;position: absolute;">Subscribe <span id="creatorSubcnt"></span></a>
-                </div>
-
-
-              </div>
-              <div class="awards" id="discoverMoreFrame" style="display:none;">
-                <h2 class="title">Discover more</h2>
-                  <div class="awards-list row" id="discoverMore">
-                    <!-- <div class="col-md-4 col-lg-4">
-                      <div class="awards-item">
-                        <div class="awards-preview">
-                          <img src=img/inc500@2x.png srcset="img/inc500@2x@2x.png 2x" alt="" class=preview-pic>
+                  <div class="col-md-4">
+                    <div class="card" style="display: none;" id="step1">
+                      <p>Please click `allow` on the top of the screen so we can access your webcam and microphone for calls.</p>
+                      <div id="step1-error">
+                        <p>Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.</p>
+                        <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
+                      </div>
+                    </div>
+                    <div class="card pd-30 mb-20" id="step2">
+                      <label>Your ID : <span id="my-id">Loading...</span></label>
+                    </div>
+                    <div class="card pd-30 mb-20" style="display: none;" id="step3">
+                      <div class="form-group">
+                          <label>You are Live</label>
                         </div>
-                        <div class="awards-title">Inc. 5000 list in 2018</div>
-                        <div class="awards-text">of the best digital agency in North America.</div>
-                      </div>
-                    </div> -->
+                        <a id="end-call" style="color:black;" class="btn btn-primary">End Stream</a>
+                    </div>
+                    <div class="card pd-30 mb-20">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="Enter Title" required="" id="streamTitle">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" class="form-control" placeholder="Enter Title" required="" id="streamDesc">
+                        </div>
+                        <div class="form-group">
+                            <label>Duration</label>
+                            <input type="number" class="form-control" placeholder="Duration in Minutes" required="" id="streamDuration">
+                        </div>
+                        <div class="form-group">
+                            <label>Paid ?</label>
+                            <input type="checkbox" class="form-control" placeholder="Paid" required="" value="1" id="streamPaid">
+                        </div>
+                        <div class="form-group" id="rateBox">
+                            <label>Rate ( per second )</label>
+                            <input type="number" class="form-control" placeholder="Rate" required="" id="streamRate">
+                        </div>
+                        <a id="updateStream" style="color:black;" class="btn btn-primary">Update Stream</a>
+                        <br/>
+                        <a id="end-call" style="color:black;" class="btn btn-primary">End Stream</a>
+                    </div>
                   </div>
+                </div>
+
               </div>
-            </div>
-          </div>
       </div>
-      <br/>
 
       <footer class="footer">
         <div class="container">
@@ -208,12 +177,17 @@
     <script src="js/lib/jquery-3.3.1.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
     <script src="js/lib/lighthouse.js"></script>
+    <script src="js/lib/peerjs@1.2.0.js"></script>
+    <script src="js/lib/sweetalert2@9.14.0.js"></script>
+
 
     <script src="js/lib/mexa@1.5.12.js"></script>
     <script src="js/globals.js"></script>
     <script src="js/contract.js"></script>
-    <script src="js/video.js"></script>
+    <script src="js/golive.js"></script>
+    <script src="js/golive2.js"></script>
     <script src="js/index.js"></script>
+
 
   </body>
 </html>

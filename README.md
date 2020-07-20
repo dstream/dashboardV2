@@ -45,6 +45,8 @@
 Click to [Download](https://github.com/dstream/dashboardV2/archive/master.zip) the archive of the repository.
 
 ### 2. Unzip and enter directory.
+Enter the `Site` directory.
+
 ### 3. Run a local webserver
 
 3.1. Included Webserver

@@ -17,28 +17,26 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<meta name="msapplication-starturl" content="/">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://cdn.jsdelivr.net" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
-    <link href="https://source.unsplash.com" rel="preconnect" crossorigin>
-    <link href="https://testnetv3.matic.network" rel="preconnect" crossorigin>
-
     <link rel="apple-touch-icon" href="icons/icon.png">
     <link rel="icon" type="image/png" href="icons/icon.png">
 
+    <link href="https://rpc-mumbai.matic.today" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
+    <link href="https://source.unsplash.com" rel="preconnect" crossorigin>
+    <link href="https://ipfs.infura.io" rel="preconnect" crossorigin>
+
     <link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Asap:400,700|Roboto+Mono:400,700" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet" >
     <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
     <link rel="stylesheet" media="all" href="css/lighthouse.css">
-  </head>
-  <body style="background-color: white;">
 
+  </head>
+  <body>
     <div class="page">
       <header class="header">
         <div class="container">
           <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="./discover.html">
-<div class="navbar-logo">
+            <a class="navbar-brand" href="">
+              <div class="navbar-logo">
                 <img class="navbar-pic" src="assets/flbulb.svg" style="filter: invert(1);">
               </div>
               <div class="navbar-title">Libertas</div>
@@ -70,82 +68,46 @@
       </header>
 
       <div class="inner">
-        <div class="main" style="background-image: url(https://source.unsplash.com/random?dark)">
+        <div class="main main-dark" style="background-image: url(https://source.unsplash.com/random?dark);background-position: center;">
           <div class="container">
-            <div class="">
-              <h1 class="main-title">You are Watching Live 🎥</h1>
-              <br/><br/><br/>
+            <div class="main-group">
+              <h1 class="main-title">Discover</h1>
             </div>
           </div>
         </div>
-        <div class="work">
+        <div class="works js-works">
+          <div class="works-nav">
             <div class="container">
-                <div class="row">
-                  <div class="col-md-8">
-                    <div class="card">
-                      <style>
-                          video {
-                              width: 100%;
-                              max-width: 100%;
-                              vertical-align: middle;
-                              border-style: none;
-                          }
-                      </style>
-                      <video id="their-video" autoplay=""></video>
-                    </div>
-
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card pd-30 mb-20">
-                      <div class="services-title">
-                          <h1 style=" font-size: 3em; ">0.00 </h1>ANC
-                          <br/><br/>
-                          Sometext</div>
-                        <a class="btn btn-white" href="#">Start project</a>
-                    </div>
-                    <div class="card" style="padding:10px;" id="step2">
-                      <label>Your ID : <span id="my-id">Loading...</span></label>
-                    </div>
-                    <div class="card" style="padding:10px;display: none;" id="step3">
-                      <div class="form-group">
-                          <label>In call with : <span id="their-id"></span></label>
-                        </div>
-                        <a id="end-call" style="color:black;" class="btn btn-primary">End Call</a>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-          <div class="container">
-            <div class="col-md-8 col-sm-12 col-xs-12">
-              <div class="row">
-                <h1 id="streamTitle">Loading..</h1>
-              </div>
-              <div class="row">
-                <p id="streamDesc">Loading..</p>
-              </div>
-              <div class="row">
-                <div class="col-xs-8">
-                  <div class="blog-head" style=" max-width: 300px; text-align: initial; ">
-                    <div class="user" style=" padding: 10px; ">
-                      <div class="user-preview">
-                        <img src="" id="creatorImage" alt="" class="user-pic">
-                      </div>
-                      <div class="user-group">
-                        <div class="user-proff"><span id="videoViewCnt">0</span> watching</div>
-                        <div class="user-name">by <span id="creatorTitle">Loading..</span> </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="col-xs-4">
-                  <a id="subscribeBtn" class="btn btn-primary" style="right: 0;position: absolute;">Subscribe <span id="creatorSubcnt"></span></a>
-                </div>
-              </div>
+              <a href="#" class="works-link js-works-link active" data-type="works-all">All Works<span class="works-counter">0</span></a>
+              <a href="#" class="works-link js-works-link" data-type="works-technology">Technology<span class="works-counter">0</span></a>
+              <a href="#" class="works-link js-works-link" data-type="works-entertainment">Entertainment<span class="works-counter">0</span></a>
+              <a href="#" class="works-link js-works-link" data-type="works-design">Design<span class="works-counter">0</span></a>
+              <a href="#" class="works-link js-works-link" data-type="works-ethereum">Ethereum<span class="works-counter">0</span></a>
             </div>
           </div>
+          <div class="container">
+            <div class="works-list" id="dvideosList">
+              <!-- <a class="works-item row js-works-item works-education visible" href="video.html">
+                <div class="col-md-4">
+                  <div class="theme">Design Systems</div>
+                  <h3 class="title">Redefining a Serious Eats Magazine</h3>
+                  <div class="works-meta"><strong>Branding, UX Design</strong> · 2019</div>
+                </div>
+                <div class="col-md-8">
+                  <div class="works-preview">
+                    <img src=img/w1.jpg srcset="img/w1@2x.jpg 2x" alt="" class=works-pic>
+                  </div>
+                </div>
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <div class="write">
+          <div class="container">
+            <div class="title">Got something to Share?<br/><em>Upload</em> and <em>earn</em> on Libertas in <em><u>realtime</u></em>.</div>
+            <a href="#" class="btn btn-md btn-blue">Share Now</a>
+          </div>
+        </div>
       </div>
 
       <footer class="footer">
@@ -190,14 +152,12 @@
     <script src="js/lib/jquery-3.3.1.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
     <script src="js/lib/lighthouse.js"></script>
-    <script src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
-    <script src="js/lib/sweetalert2@9.14.0.js"></script>
 
     <script src="js/lib/mexa@1.5.12.js"></script>
-<script src="js/globals.js"></script>
+    <script src="js/globals.js"></script>
     <script src="js/contract.js"></script>
-    <script src="js/watchlive.js"></script>
-    <script src="js/watchlive2.js"></script>
+    <script src="js/discover.js"></script>
+
     <script src="js/index.js"></script>
 
   </body>

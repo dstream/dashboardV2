@@ -1,6 +1,7 @@
 let TokenContract;
 let SablierContract;
 let LibertasContract;
+let LibertasPostsContract;
 let Biconomy = window.Biconomy;
 let biconomy;
 
@@ -9,8 +10,8 @@ window.addEventListener('load', async () => {
     if (window.web3) {
 
         web3.version.getNetwork((err, netId) => {
-            if(netId != 15001){
-                alert("Please switch to https://testnetv3.matic.network");
+            if(netId != 80001){
+                alert("Please switch to https://rpc-mumbai.matic.today");
             }
         });
 

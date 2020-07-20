@@ -1,7 +1,7 @@
 
-const tokenAddress = "0x51b9E97ae9758a45B08c51C1bd4EEEcE3A64489a";
-const sablierAddress = "0x859c5Fd8be133510Fc5c7c15563Fb0a3ccDBb821";
-const libertasAddress = "0xF85E69Bc8a4C6E0aFC605da8ddC11D0B47319BC2";
+const tokenAddress = "0xAb2f5fCAe663d6226f5A7d3555d655DEbB0bcF5F";
+const sablierAddress = "0xE1D1D66A37C22cCCfbbbbD15Dc77B41c44BF681f";
+const libertasAddress = "0xd3bBA94403767E4E73C368686F5C9311aD0Fb657";
 const faucetAddress = "0xe0dB435635A40b4FcC7DB2B053b398cc070bf646";
 
 const tokenABI = [
