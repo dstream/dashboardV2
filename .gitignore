@@ -5,3 +5,5 @@ agent_log
 error_log
 referer_log
 note.txt
+.textileseed
+.textile/
