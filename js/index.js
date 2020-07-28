@@ -6,6 +6,9 @@ let Biconomy = window.Biconomy;
 let biconomy;
 
 window.addEventListener('load', async () => {
+    if (typeof window.ethereum === 'undefined') {
+        ethereum.autoRefreshOnNetworkChange = false;
+    }
 
     if (window.web3) {
 
@@ -18,7 +21,7 @@ window.addEventListener('load', async () => {
 
         try {
             let options = {
-                apiKey: 'WV-l7YQaN.72e99dd9-0411-48e5-ba15-683e6f8a4e30',
+                apiKey: 'zgMOuSoVm.ee90efe8-31d3-4416-88f0-cae22db150f5',
                 strictMode: false,
                 debug: true
             };
@@ -50,7 +53,13 @@ window.addEventListener('load', async () => {
 });
 
 async function requireLogin(){
-    await web3.currentProvider.enable();
+
+    if (window.ethereum != undefined){
+        await ethereum.request({ method: 'eth_requestAccounts' });
+    }
+    else{
+        await web3.currentProvider.enable();
+    }
 
     if(!biconomy.isLogin) {
         await biconomyLogin();

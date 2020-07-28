@@ -305,6 +305,7 @@ a {
   -webkit-transition: opacity .2s;
   -o-transition: opacity .2s;
   transition: opacity .2s;
+  text-decoration: none !important;
 }
 
 a:hover {
