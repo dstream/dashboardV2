@@ -1,7 +1,7 @@
 let TokenContract;
 let SablierContract;
 let LibertasContract;
-let LibertasPostsContract;
+let LibertasArticlesContract;
 let Biconomy = window.Biconomy;
 let biconomy;
 
@@ -33,6 +33,7 @@ window.addEventListener('load', async () => {
             SablierContract = new web3.eth.Contract(sablierABI, sablierAddress);
             LibertasContract = new web3.eth.Contract(libertasABI, libertasAddress);
             FaucetContract = new web3.eth.Contract(faucetABI, faucetAddress);
+            LibertasArticlesContract = new web3.eth.Contract(libertasArticlesABI, libertasArticlesAddress)
 
             biconomy.onEvent(biconomy.READY, async () => {
                 console.table(biconomy.dappAPIMap);

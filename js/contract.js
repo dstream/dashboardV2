@@ -836,3 +836,161 @@ async function getAdvertiser(_advID) {
     }
     return respData;
 }
+
+// ENS Functions
+
+async function Reverse(address) {
+    let web3temp = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/97c8bf358b9942a9853fab1ba93dc5b3"));
+    var lookup=address.toLowerCase().substr(2) + '.addr.reverse'
+    var ResolverContract=await web3temp.eth.ens.getResolver(lookup);
+    var nh=ethEnsNamehash.hash(lookup);
+    var name=await ResolverContract.methods.name(nh).call()
+    return name;
+}
+
+// Libertas Articles Functions
+
+async function getArticle(_articleID) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.Articles(_articleID.toString()).call(function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    let respData = {
+        ID: parseInt(result[0]),
+        controller: result[1],
+        category: parseInt(result[2]),
+        active: result[3],
+        published: result[4],
+        dataHash: result[5],
+        lastUpdated: parseInt(result[6]),
+        isPaid: result[7],
+        cost: parseFloat(web3.utils.fromWei(result[8].toString())),
+        earnings: parseFloat(web3.utils.fromWei(result[9].toString())),
+    }
+    return respData;
+}
+
+function calcNameCost(name){
+    let _length = name.length;
+    let costMultiplier = 100;
+    if(_length > 10){
+        return 0;
+    }
+    else{
+        let amount = ((10**18) / (_length**2))*costMultiplier;
+        return web3.utils.fromWei(amount.toString());
+    }
+}
+
+async function pseudonymTaken(_name) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.pseudonymTaken(_name).call(function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
+async function getLastArticleID() {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.lastArticleID().call(function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return parseInt(result);
+}
+
+async function getArticleIDs(_userAddress) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.getArticleIDs(_userAddress).call(function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
+async function addressToPseudonym(_userAddress) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.addressToPseudonym(_userAddress).call(function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
+async function claimPseudonym(_name) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.claimPseudonym(_name).send({from:web3.currentProvider.selectedAddress, value: web3.utils.toWei(calcNameCost(_name), 'ether')}, function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
+async function createArticle(_published, _dataHash, _isPaid, _cost, _category) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.claimPseudonym(_published, _dataHash, _isPaid, _cost, _category)
+        .send({from:web3.currentProvider.selectedAddress, value: web3.utils.toWei(_cost, 'ether')}, function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+

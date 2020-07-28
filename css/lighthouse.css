@@ -2042,14 +2042,14 @@ textarea.form-control {
 }
 
 .contacts {
-  margin-top: -65px;
-  padding: 140px 0 96px;
+  /* margin-top: -65px; */
+  padding: 0px 0 96px;
   background: black;
-  color: #E6BCE4;
+  color: #ffffff;
 }
 
 .contacts-wrap {
-  max-width: 750px;
+  /* max-width: 750px; */
 }
 
 .contacts-content {
@@ -2063,7 +2063,7 @@ textarea.form-control {
 }
 
 .contacts-content a {
-  color: #E6BCE4;
+  color: #0400ff;
 }
 
 .contacts .title {
@@ -2570,8 +2570,8 @@ textarea.form-control {
     padding: 48px 40px;
   }
   .contacts {
-    margin-top: -80px;
-    padding: 230px 0 108px;
+    margin-top: 0px;
+    padding: 30px 0 108px;
   }
   .contacts-content_lg {
     font-size: 36px;

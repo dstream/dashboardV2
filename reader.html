@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
-		<link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json">
 
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="application-name" content="LIbertas">
-		<meta name="apple-mobile-web-app-title" content="LIbertas">
-		<meta name="theme-color" content="#00">
-		<meta name="msapplication-navbutton-color" content="#00">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="msapplication-starturl" content="/">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="LIbertas">
+    <meta name="apple-mobile-web-app-title" content="LIbertas">
+    <meta name="theme-color" content="#00">
+    <meta name="msapplication-navbutton-color" content="#00">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" href="icons/icon.png">
     <link rel="icon" type="image/png" href="icons/icon.png">
 
@@ -37,7 +37,7 @@
           <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="">
               <div class="navbar-logo">
-                <img class="navbar-pic" src="assets/flbulb.svg" style="filter: invert(1);">
+                <img class="navbar-pic" src="icons/icon.svg" style="filter: invert(1);">
               </div>
               <div class="navbar-title">Libertas</div>
             </a>
@@ -68,44 +68,14 @@
       </header>
 
       <div class="inner">
-        <div class="main main-dark" style="background-image: url(https://source.unsplash.com/random?dark);background-position: center;">
+        <div class="contacts">
           <div class="container">
-            <div class="main-group">
-              <h1 class="main-title">Discover</h1>
+            <div class="contacts-wrap">
+              <div class="title">Let’s stay in touch</div>
+              <div class="row" id="dArticle">
+                <center>Here's your chance to catch a few blinks.</center>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="works js-works">
-          <div class="works-nav">
-            <div class="container">
-              <a href="#" class="works-link js-works-link active" data-type="works-all">All Works<span class="works-counter">0</span></a>
-              <a href="#" class="works-link js-works-link" data-type="works-technology">Technology<span class="works-counter">0</span></a>
-              <a href="#" class="works-link js-works-link" data-type="works-entertainment">Entertainment<span class="works-counter">0</span></a>
-              <a href="#" class="works-link js-works-link" data-type="works-design">Design<span class="works-counter">0</span></a>
-              <a href="#" class="works-link js-works-link" data-type="works-ethereum">Ethereum<span class="works-counter">0</span></a>
-            </div>
-          </div>
-          <div class="container">
-            <div class="works-list" id="dvideosList">
-              <!-- <a class="works-item row js-works-item works-education visible" href="video.html">
-                <div class="col-md-4">
-                  <div class="theme">Design Systems</div>
-                  <h3 class="title">Redefining a Serious Eats Magazine</h3>
-                  <div class="works-meta"><strong>Branding, UX Design</strong> · 2019</div>
-                </div>
-                <div class="col-md-8">
-                  <div class="works-preview">
-                    <img src=img/w1.jpg srcset="img/w1@2x.jpg 2x" alt="" class=works-pic>
-                  </div>
-                </div>
-              </a> -->
-            </div>
-          </div>
-        </div>
-        <div class="write">
-          <div class="container">
-            <div class="title">Got something to Share?<br/>Make it <em><u>Unstoppable</u></em> with Libertas.</div>
-            <a href="#" class="btn btn-md btn-blue">Share Now</a>
           </div>
         </div>
       </div>
@@ -147,16 +117,19 @@
 				});
       }
     */
-		</script>
+    </script>
 		<script src="js/lib/web3@1.2.11.js"></script>
     <script src="js/lib/jquery-3.3.1.min.js"></script>
     <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/buffer@latest.js"></script>
+    <script src="js/lib/markdown-it@11.0.0.js"></script>
     <script src="js/lib/lighthouse.js"></script>
 
     <script src="js/lib/mexa@1.5.13.js"></script>
+    <script src="js/lib/ipfs@0.48.1.js"></script>
     <script src="js/globals.js"></script>
     <script src="js/contract.js"></script>
-    <script src="js/discover.js"></script>
+    <script src="js/reader.js"></script>
 
     <script src="js/index.js"></script>
 

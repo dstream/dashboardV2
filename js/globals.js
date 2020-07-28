@@ -282,7 +282,6 @@ const sablierABI = [
 	}
 ]
 
-
 const libertasABI = [
     {
       "inputs": [
@@ -2686,7 +2685,7 @@ const faucetABI = [
       "stateMutability": "nonpayable",
       "type": "function"
     }
-  ]
+]
 
 const libertasArticlesABI = [
     {
@@ -2978,7 +2977,7 @@ const libertasArticlesABI = [
       "type": "function",
       "constant": true
     }
-  ]
+]
 
 const libertasGovernance = [
     {
@@ -3092,4 +3091,4 @@ const libertasGovernance = [
       "stateMutability": "nonpayable",
       "type": "function"
     }
-  ];
+];
