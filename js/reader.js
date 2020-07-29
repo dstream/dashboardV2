@@ -20,12 +20,16 @@ async function init(){
 }
 
 async function refreshUI(){
+
     let data = await getArticle(page_aid);
+    console.log(data);
+    document.querySelector('#dTitle').innerText = data.title;
+    document.querySelector('#author').innerText = 'By ' + formatAddress(data.controller);
     let markdown = await hashToMarkdown(data.dataHash);
     let md = new markdownit();
     let markdownHTML = md.render(markdown);
     document.querySelector('#dArticle').innerHTML = markdownHTML;
-    // console.log(result);
+    hideLoader();
 }
 
 async function hashToMarkdown(_ipfsHash){

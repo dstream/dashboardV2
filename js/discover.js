@@ -31,5 +31,6 @@ async function refreshUI(){
 
         dvideosList.innerHTML+=videoHTML;
     }
+    hideLoader();
     filterEnable();
 }

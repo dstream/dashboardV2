@@ -18,7 +18,9 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" href="icons/icon.png">
-    <link rel="icon" type="image/png" href="icons/icon.png">
+    <!-- <link rel="icon" type="image/png" href="icons/icon.png"> -->
+    <link rel="icon" type="image/png" href="icons/icon-dark.png" id="light-scheme-icon">
+    <link rel="icon" type="image/png" href="icons/icon-white.png" id="dark-scheme-icon">
 
     <link href="https://rpc-mumbai.matic.today" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin>
@@ -31,6 +33,14 @@
 
   </head>
   <body>
+    <div class="loader-div">
+			<span class="loader">
+			  <span></span>
+			  <span></span>
+      </span>
+      <br/>
+      <span style="color: white;">Fetching Article From IPFS</span>
+		</div>
     <div class="page">
       <header class="header">
         <div class="container">
@@ -71,7 +81,11 @@
         <div class="contacts">
           <div class="container">
             <div class="contacts-wrap">
-              <div class="title">Let’s stay in touch</div>
+              <div class="title">
+                <span id='dTitle'>Loading</span>
+                <br/>
+                <span class="text" id='author'>Author</span>
+              </div>
               <div class="row" id="dArticle">
                 <center>Here's your chance to catch a few blinks.</center>
               </div>
@@ -85,7 +99,7 @@
           <div class="row">
             <div class="col-md-6">
                 <div class="footer-links text-center">
-                Made with ❤ by <a href="https://anudit.dev" target="_blank">Anudit Nagar</a>
+                Made with ❤️ by <a href="https://anudit.dev" target="_blank">Anudit Nagar</a>
               </div>
             </div>
             <div class="col-md-6">

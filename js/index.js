@@ -5,8 +5,28 @@ let LibertasArticlesContract;
 let Biconomy = window.Biconomy;
 let biconomy;
 
+// Change Favicon based on the system theme.
+document.addEventListener("DOMContentLoaded", ()=>{
+    matcher = window.matchMedia('(prefers-color-scheme: dark)');
+    matcher.addListener(onUpdate);
+    onUpdate();
+    let lightSchemeIcon = document.querySelector('link#light-scheme-icon');
+    let darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
+
+    function onUpdate() {
+        if (matcher.matches) {
+            lightSchemeIcon.remove();
+            document.head.append(darkSchemeIcon);
+        } else {
+            document.head.append(lightSchemeIcon);
+            darkSchemeIcon.remove();
+        }
+    }
+});
+
 window.addEventListener('load', async () => {
-    if (typeof window.ethereum === 'undefined') {
+
+    if (typeof window.ethereum !== 'undefined') {
         ethereum.autoRefreshOnNetworkChange = false;
     }
 
@@ -49,7 +69,14 @@ window.addEventListener('load', async () => {
         }
 
     } else{
-        alert("Get MetaMask");
+        window.web3 = new Web3(new Web3.providers.HttpProvider('https://rpc-mumbai.matic.today'));
+        TokenContract = new web3.eth.Contract(tokenABI, tokenAddress);
+        SablierContract = new web3.eth.Contract(sablierABI, sablierAddress);
+        LibertasContract = new web3.eth.Contract(libertasABI, libertasAddress);
+        FaucetContract = new web3.eth.Contract(faucetABI, faucetAddress);
+        LibertasArticlesContract = new web3.eth.Contract(libertasArticlesABI, libertasArticlesAddress)
+        init();
+        alert("We Recommend Getting a Web3 Compatible browser like MetaMask or Coinbase Wallet.");
     }
 });
 
@@ -185,4 +212,30 @@ function arrSum(arr){
         total = total + key;
     });
     return total;
+}
+
+function formatAddress(address = '0x784af89Db31632583eF2b12994341449E8c28860'){
+    var res = address.match(/^0x[a-fA-F0-9]{40}$/g);
+    if (Boolean(res.length) == true){
+        return trimAddress(address);
+    }
+    // else {
+    //     return Reverse(address);
+    // }
+    return trimAddress(address);;
+}
+
+function hideLoader() {
+    var fadeTarget = document.querySelector('.loader-div');
+    var fadeEffect = setInterval(function () {
+        if (!fadeTarget.style.opacity) {
+            fadeTarget.style.opacity = 1;
+        }
+        if (fadeTarget.style.opacity > 0) {
+            fadeTarget.style.opacity -= 0.1;
+        } else {
+            document.querySelector('.loader-div').remove();
+            clearInterval(fadeEffect);
+        }
+    }, 100);
 }

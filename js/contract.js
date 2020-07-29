@@ -870,11 +870,12 @@ async function getArticle(_articleID) {
         category: parseInt(result[2]),
         active: result[3],
         published: result[4],
-        dataHash: result[5],
-        lastUpdated: parseInt(result[6]),
-        isPaid: result[7],
-        cost: parseFloat(web3.utils.fromWei(result[8].toString())),
-        earnings: parseFloat(web3.utils.fromWei(result[9].toString())),
+        title: result[5],
+        dataHash: result[6],
+        lastUpdated: parseInt(result[7])*1000,
+        isPaid: result[8],
+        cost: parseFloat(web3.utils.fromWei(result[9].toString())),
+        earnings: parseFloat(web3.utils.fromWei(result[10].toString())),
     }
     return respData;
 }
