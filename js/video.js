@@ -41,6 +41,9 @@ async function refreshUI(){
         getVideoExtraByIndex(parseInt(getParameterByName('id'))),
         getCreatorDataByVideo(parseInt(getParameterByName('id')))
     ]);
+    const pageData = await Promise.all([
+        getAd(videoData[1].activeAdID)
+    ]);
     console.log(videoData);
 
     window.vid_owner = videoData[0].owner;
@@ -67,9 +70,7 @@ async function refreshUI(){
     document.getElementById("creatorSubcnt").innerText = videoData[2].subscriberCnt;
 
 
-    const pageData = await Promise.all([
-        getAd(videoData[1].activeAdID)
-    ]);
+
 
     console.log(pageData);
 

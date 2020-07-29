@@ -8,19 +8,14 @@ let biconomy;
 // Change Favicon based on the system theme.
 document.addEventListener("DOMContentLoaded", ()=>{
     matcher = window.matchMedia('(prefers-color-scheme: dark)');
-    matcher.addListener(onUpdate);
-    onUpdate();
     let lightSchemeIcon = document.querySelector('link#light-scheme-icon');
     let darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
-
-    function onUpdate() {
-        if (matcher.matches) {
-            lightSchemeIcon.remove();
-            document.head.append(darkSchemeIcon);
-        } else {
-            document.head.append(lightSchemeIcon);
-            darkSchemeIcon.remove();
-        }
+    if (matcher.matches) {
+        lightSchemeIcon.remove();
+        document.head.append(darkSchemeIcon);
+    } else {
+        document.head.append(lightSchemeIcon);
+        darkSchemeIcon.remove();
     }
 });
 
@@ -65,7 +60,6 @@ window.addEventListener('load', async () => {
         } catch (error) {
             console.log(error);
             alert(error);
-
         }
 
     } else{
@@ -76,7 +70,7 @@ window.addEventListener('load', async () => {
         FaucetContract = new web3.eth.Contract(faucetABI, faucetAddress);
         LibertasArticlesContract = new web3.eth.Contract(libertasArticlesABI, libertasArticlesAddress)
         init();
-        alert("We Recommend Getting a Web3 Compatible browser like MetaMask or Coinbase Wallet.");
+        alert("We Recommend Getting a Web3 Compatible browser like MetaMask.");
     }
 });
 
@@ -98,9 +92,8 @@ async function biconomyLogin(){
 	let promise = new Promise(async (res, rej) => {
 
 		try{
-
-            let userAddress = await web3.eth.getAccounts().then((data)=>{return data[0]});
-			biconomy.login(userAddress, (error, response) => {
+            // let userAddress = await web3.eth.getAccounts().then((data)=>{return data[0]});
+			biconomy.login(web3.currentProvider.selectedAddress, (error, response) => {
 				if(response.userContract) {
 					console.log("Existing User Contract: " + response.userContract);
 					res(true);

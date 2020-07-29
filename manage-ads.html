@@ -61,7 +61,7 @@
 									</li>
 								</ul>
 								<div>
-									<a class="btn btn-blue" href="./upload.html">Upload</a>
+									<a class="btn btn-blue" href="./account.html">Your Account</a>
 								</div>
 							</div>
 						</div>
@@ -72,97 +72,122 @@
 				<div class="main main-dark" style="background-image: url(https://source.unsplash.com/random?dark);background-position: center;">
 					<div class="container">
 						<div class="main-group">
-							<h1 class="main-title">Your Account</h1>
+							<h1 class="main-title">Manage Your Ads</h1>
 						</div>
 					</div>
-				</div>
-				<div class="services" style=" padding: 20px 0 40px; ">
+                </div>
+				<div class="works js-works" id= "adsFrame" style="display: none;">
+					<div class="works-nav">
+						<div class="container">
+							<a href="#" class="works-link js-works-link active" data-type="works-all">All Works<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-technology">Technology<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-entertainment">Entertainment<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-design">Design<span class="works-counter">0</span></a>
+							<a href="#" class="works-link js-works-link" data-type="works-ethereum">Ethereum<span class="works-counter">0</span></a>
+						</div>
+					</div>
 					<div class="container">
-						<div class="row">
-							<div class="col-md-4 col-lg-4">
-								<div class="services-item" style="cursor:pointer;" onclick="window.location = 'manage-videos.html'">
-									<div>
-										<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"><path d="M11.266 7l12.734-2.625-.008-.042-1.008-4.333-21.169 4.196c-1.054.209-1.815 1.134-1.815 2.207v14.597c0 1.657 1.343 3 3 3h18c1.657 0 3-1.343 3-3v-14h-12.734zm8.844-5.243l2.396 1.604-2.994.595-2.398-1.605 2.996-.594zm-5.898 1.169l2.4 1.606-2.994.595-2.401-1.607 2.995-.594zm-5.904 1.171l2.403 1.608-2.993.595-2.406-1.61 2.996-.593zm-2.555 5.903l2.039-2h3.054l-2.039 2h-3.054zm4.247 10v-7l6 3.414-6 3.586zm4.827-10h-3.054l2.039-2h3.054l-2.039 2zm6.012 0h-3.054l2.039-2h3.054l-2.039 2z"/></svg>
-									</div>
-									<br/>
-									<h1>Manage Your Videos</h1>
+						<div class="works-list" id="adsList">
+							<!-- <a class="works-item row js-works-item works-education visible" href="video.html">
+								<div class="col-md-4">
+								<div class="theme">Design Systems</div>
+								<h3 class="title">Redefining a Serious Eats Magazine</h3>
+								<div class="works-meta"><strong>Branding, UX Design</strong> · 2019</div>
 								</div>
-							</div>
-							<div class="col-md-4 col-lg-4">
-								<div class="services-item" style="cursor:pointer;" onclick="window.location = 'manage-ads.html'">
-									<div>
-										<svg width="96" height="96" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 15.951c0-2.468-1.744-4.451-4.114-5.353.069-.395.114-.793.114-1.195 0-4.88-4.751-8.403-10-8.403-5.282 0-10 3.549-10 8.403 0 1.721.616 3.411 1.706 4.724.045 1.536-.852 3.741-1.661 5.346 2.168-.394 5.251-1.265 6.648-2.13 1.18.289 2.313.424 3.383.424l.273-.013c.866 2.251 3.314 4.052 6.6 4.052.748 0 1.54-.094 2.366-.297.978.604 3.137 1.215 4.654 1.491-.566-1.124-1.194-2.667-1.162-3.742.763-.919 1.193-2.101 1.193-3.307zm-3.148 4.084c-.396-.168-.421-.2-1.201-.682-1.011.247-1.683.438-2.702.438-2.179 0-3.76-1.016-4.492-2.265 3.247-.654 5.686-2.607 6.827-5.01 1.61.644 2.716 1.941 2.716 3.435 0 .542-.015 1.158-1.171 2.548-.023.763-.043 1.005.023 1.536zm-14.496-4.849c-.805.5-1.169.794-3.004 1.384.436-1.599.356-2.382.332-3.201-.318-.384-1.684-1.71-1.684-3.966 0-3.522 3.589-6.388 8-6.388 4.412 0 8 2.866 8 6.388 0 3.053-3.029 6.348-7.924 6.348-1.649 0-2.904-.364-3.72-.565zm6.643-3.537c-.212.071-.441-.044-.511-.256 0 0-1.496-.501-3.272.088l1.166 1.814c.121.179.037.422-.164.49l-.794.263-.167.028c-.149 0-.294-.064-.396-.179l-1.604-1.77c-.873.276-1.862-.042-2.192-.865-.076-.188-.114-.389-.114-.592 0-.585.327-1.183 1.038-1.533 3.559-1.747 4.128-3.696 4.128-3.696-.086-.262.11-.532.382-.532.169 0 .327.108.383.277l2.371 5.952c.071.212-.044.441-.254.511zm1.687-2.043l-.614-.261c.267-.634.293-1.371.014-2.058-.279-.688-.808-1.199-1.441-1.466l.26-.615c1.265.535 2.046 1.771 2.046 3.091 0 .454-.092.898-.265 1.309zm-1.063-.451l-.599-.254c.154-.365.169-.789.008-1.185-.16-.396-.466-.69-.83-.843l.253-.601c.518.219.952.635 1.179 1.198.229.564.207 1.165-.011 1.685z"/></svg>
-									</div>
-									<br/>
-									<h1>Manage Your Ads</h1>
+								<div class="col-md-8">
+								<div class="works-preview">
+								 <img src=img/w1.jpg srcset="img/w1@2x.jpg 2x" alt="" class=works-pic>
 								</div>
-							</div>
-							<div class="col-md-4 col-lg-4">
-								<div class="services-item" style="cursor:pointer;" onclick="window.location = 'manage-articles.html'">
-									<div>
-										<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"><path d="M7 16h13v1h-13v-1zm13-3h-13v1h13v-1zm0-6h-5v1h5v-1zm0 3h-5v1h5v-1zm-17-8v17.199c0 .771-1 .771-1 0v-15.199h-2v15.98c0 1.115.905 2.02 2.02 2.02h19.958c1.117 0 2.022-.904 2.022-2.02v-17.98h-21zm19 17h-17v-15h17v15zm-9-12h-6v4h6v-4z"/></svg>
-									</div>
-									<br/>
-									<h1>Manage Your Articles</h1>
 								</div>
-							</div>
+								</a> -->
 						</div>
 					</div>
 				</div>
+				<h2 class="title text-white" style="text-align:center;">Publish a New Ad</h2>
 				<div class="services" style=" padding: 20px 0 40px; ">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-4 col-lg-4">
 								<div class="services-item">
 									<div class="services-title">
-										<h1 style=" font-size: 3em; " id="userBalance">0.00 </h1>
-										ANC
+										<h2>Your Ad Profile <br/><span class="label">Step 1</span></h2>
+										<h1 id="advAdCnt"  style=" font-size: 3em;">0</h1>
+										<p>Ads Created by,  <span id="advName"></span></p>
 									</div>
-									<p>Account Balance</p>
-									<br/>
+									<div id="advRegisterFrame" style="display:none;">
+										<input class="form-control" type="text" id="advNameVal" placeholder="Advertiser Name">
+										<a class="btn btn-white" id="registerAdv">Register Profile</a>
+									</div>
 									<div class="services-title">
-										<h1 style=" font-size: 3em; " id="faucetBalance">0.00 </h1>
+										<h1 style=" font-size: 3em;" id="advAdBudgetLeft">0.00 </h1>
 										ANC
 									</div>
-									<p>Faucet Balance</p>
-									<a class="btn btn-white" id="getFromFaucet">Get from Faucet 🚰</a>
+									<p>Overall Ad Buget Left</p>
 								</div>
 							</div>
 							<div class="col-md-4 col-lg-4">
 								<div class="services-item">
-									<div class="services-title">
-										<h1 style=" font-size: 3em;" id="allowanceAmt">0.00 </h1>
-										ANC
-										<p>Current Allowance</p>
-									</div>
-									<input class=" form-control" type="number" id="allowanceAmtVal" placeholder="Enter Amount"><br/>
-									<a class="btn btn-white" id="increaseAllowance">🔼 Increase Allowance</a><br/>
-									<a class="btn btn-white" id="setAllowance">✅ Set Allowance</a><br/>
-									<a class="btn btn-white" id="decreaseAllowance">🔽 Decrease Allowance</a>
-								</div>
-							</div>
-							<div class="col-md-4 col-lg-4">
-								<div class="services-item">
-									<div class="services-title" >
-										<h3>About You</h3>
-										<p>Your Name : <span id="creatorName"></span></p>
-									</div>
-									<input class="form-control" type="text" id="creatorNameVal" placeholder="Enter Name"><br/>
-									<a class="btn btn-white" href="#" id="updateCreatorName">Update Name</a>
+									<h2>Pick An Ad <br/><span class="label">Step 2</span></h2>
 									<br/>
-									<img src='' id="creatorImage" style="max-width: 100px;align-self: center;">
+									<img src='' id="adImage" style="max-width: 100px;align-self: center;">
 									<div class="box">
-										<input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" style="display:none;"/>
-										<label for="file-1">
+										<input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-1" style="display:none;"/>
+										<label for="file-2">
 											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
 												<path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
 											</svg>
 											<span>Choose a file&hellip;</span>
 										</label>
 									</div>
-									<a class="btn btn-white" id="uploadCreatorImage">Upload 🚀</a>
+									<a class="btn btn-white" id="uploadAd">Upload 🚀</a>
 									<br/>
-									<p id="status"></p>
+									<p id="statusUploadAd"></p>
+									<br/>
+									<div class="form-group">
+										<label>Enter a link for your Ad</label>
+										<input type="text" 	class="form-control" placeholder="Enter Link" required="" id="adLink">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Enter Details <br/><span class="label">Step 3</span></h2>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Amount Per Second" required="" id="adRate">
+									</div>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Budget" required="" id="adBudget">
+									</div>
+									<div class="form-group">
+										<label>Choose Category</label>
+										<select class="form-control" id="adCat" required="">
+											<option value='1'>Technology</option>
+											<option value='2'>Entertainment</option>
+											<option value='3'>Design</option>
+											<option value='4'>Ethereum</option>
+										</select>
+									</div>
+									<a class="btn btn-white" id="publishAd">Publish Ad</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h2 class="title text-white" style="text-align:center;">Sponsorships</h2>
+				<div class="services" style=" padding: 20px 0 40px; ">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<h2>Sponsor a Video</h2>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Ad ID" required="" id="sponsorAdID">
+									</div>
+									<div class="form-group">
+										<input type="number" class="form-control" placeholder="Enter Video Id" required="" id="sponsorVideoID">
+									</div>
+									<a class="btn btn-white" id="sponsorVideoBtn">Sponsor it.</a>
 								</div>
 							</div>
 						</div>
@@ -211,10 +236,11 @@
 		<script src="js/lib/sweetalert2@9.14.0.js"></script>
 		<script src="js/lib/lighthouse.js"></script>
 		<script src="js/lib/ipfs@0.48.1.js"></script>
-		<script src="js/lib/mexa@1.5.13.js"></script>
+        <script src="js/lib/mexa@1.5.13.js"></script>
+
 		<script src="js/globals.js"></script>
 		<script src="js/contract.js"></script>
-		<script src="js/account.js"></script>
+		<script src="js/manage-ads.js"></script>
 		<script src="js/index.js"></script>
 	</body>
 </html>

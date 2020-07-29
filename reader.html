@@ -18,8 +18,7 @@
     <meta name="msapplication-starturl" content="/">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="apple-touch-icon" href="icons/icon.png">
-    <!-- <link rel="icon" type="image/png" href="icons/icon.png"> -->
-    <link rel="icon" type="image/png" href="icons/icon-dark.png" id="light-scheme-icon">
+    <link rel="icon" type="image/png" href="icons/icon-black.png" id="light-scheme-icon">
     <link rel="icon" type="image/png" href="icons/icon-white.png" id="dark-scheme-icon">
 
     <link href="https://rpc-mumbai.matic.today" rel="preconnect" crossorigin>
@@ -84,7 +83,15 @@
               <div class="title">
                 <span id='dTitle'>Loading</span>
                 <br/>
-                <span class="text" id='author'>Author</span>
+                <div>
+                  <span class="text" id='author'>Author</span>
+                  <div style="visibility:hidden;filter:invert(1);display:inline;position: absolute;margin-top:6px;margin-left: 10px;" id="share">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+                      <path d="M5 7c2.761 0 5 2.239 5 5s-2.239 5-5 5-5-2.239-5-5 2.239-5 5-5zm11.122 12.065c-.073.301-.122.611-.122.935 0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4c-1.165 0-2.204.506-2.935 1.301l-5.488-2.927c-.23.636-.549 1.229-.943 1.764l5.488 2.927zm7.878-15.065c0-2.209-1.791-4-4-4s-4 1.791-4 4c0 .324.049.634.122.935l-5.488 2.927c.395.535.713 1.127.943 1.764l5.488-2.927c.731.795 1.77 1.301 2.935 1.301 2.209 0 4-1.791 4-4z"></path>
+                    </svg>
+                  </div>
+                </div>
+
               </div>
               <div class="row" id="dArticle">
                 <center>Here's your chance to catch a few blinks.</center>
@@ -140,7 +147,7 @@
     <script src="js/lib/lighthouse.js"></script>
 
     <script src="js/lib/mexa@1.5.13.js"></script>
-    <script src="js/lib/ipfs@0.48.1.js"></script>
+    <!-- <script src="js/lib/ipfs@0.48.1.js"></script> -->
     <script src="js/globals.js"></script>
     <script src="js/contract.js"></script>
     <script src="js/reader.js"></script>

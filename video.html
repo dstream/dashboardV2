@@ -24,7 +24,9 @@
     <link href="https://ipfs.infura.io" rel="preconnect" crossorigin>
 
     <link rel="apple-touch-icon" href="icons/icon.png">
-    <link rel="icon" type="image/png" href="icons/icon.png">
+    <link rel="icon" type="image/png" href="icons/icon-black.png" id="light-scheme-icon">
+    <link rel="icon" type="image/png" href="icons/icon-white.png" id="dark-scheme-icon">
+
 
     <link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Asap:400,700|Roboto+Mono:400,700" rel="stylesheet">
     <link rel="stylesheet" media="all" href="css/bootstrap.min.css">
@@ -121,13 +123,13 @@
           <div class="container">
             <div class="col-md-8 col-sm-12 col-xs-12">
               <div class="row">
-                <h1 id="videoTitle">Loading..</h1>
+                <h1 id="videoTitle" style="padding-top: 10px;">Loading..</h1>
               </div>
               <div class="row">
                 <p id="videoDesc">Loading..</p>
               </div>
               <div class="row">
-                <div class="col-xs-8">
+                <div class="col-6 col-sm-6 col-md-8">
                   <div class="blog-head" style=" max-width: 300px; text-align: initial; ">
                     <div class="user" style=" padding: 10px; ">
                       <div class="user-preview">
@@ -141,8 +143,8 @@
 
                   </div>
                 </div>
-                <div class="col-xs-4">
-                  <a id="subscribeBtn" class="btn btn-primary" style="right: 0;position: absolute;">Subscribe <span id="creatorSubcnt"></span></a>
+                <div class="col-6 col-sm-6 col-md-4" style="text-align: right;">
+                  <a id="subscribeBtn" class="btn btn-primary">Subscribe <span id="creatorSubcnt"></span></a>
                 </div>
 
 
