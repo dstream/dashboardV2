@@ -1,26 +1,47 @@
+var easyMDE;
+var EDITORSTATE;
 async function init(){
 
-    if (getParameterByName('id') !== null )
-    {
+    if (getParameterByName('id') !== null ) {
+
         window.lastArticleID = await getLastArticleID();
-        if (parseInt(getParameterByName('id')) <= lastArticleID && parseInt(getParameterByName('id'))>0){
-            let articleData = await getArticle(parseInt(getParameterByName('id')));
-            let markdownData = await hashToMarkdown(articleData.dataHash);
-            setupEditor(markdownData);
+        if (parseInt(getParameterByName('id'))>=0 && parseInt(getParameterByName('id')) <= lastArticleID){
+            window.articleData = await getArticle(parseInt(getParameterByName('id')));
+            if (articleData.controller.toLowerCase() != web3.currentProvider.selectedAddress.toLowerCase()) {
+                setupEditor('NEW');
+            }
+            else {
+                let markdownData = await hashToMarkdown(articleData.dataHash);
+                setupEditor('RESUME', markdownData);
+            }
         }
         else{
-            setupEditor();
+            setupEditor('NEW');
         }
     }
+    else if (getParameterByName('import') !== null ) {
+
+        fetch(`https://importfrommedium.herokuapp.com/get?address=${getParameterByName('import')}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            setupEditor('MEDIUM', data['data']);
+        })
+        .catch((error) => {
+            console.log(error);
+            setupEditor('NEW');
+        });
+    }
     else{
-        setupEditor();
+        setupEditor('NEW');
     };
 
 
 }
 
-function setupEditor(text = null){
-    var easyMDE = new EasyMDE({
+function setupEditor(EDITORSTATE, text = null){
+    // console.log(EDITORSTATE, text);
+    easyMDE = new EasyMDE({
         autosave: {
             enabled: true,
             uniqueId: 'editordata',
@@ -31,12 +52,32 @@ function setupEditor(text = null){
         placeholder: "Type away, no distractions.",
         tabSize: 4,
         element: document.getElementById("editor")
-
     });
     if (text != null){
         easyMDE.value(text);
     }
 
+    document.querySelector('#reset').style.display = 'inline-block';
+    if (EDITORSTATE === 'NEW') {
+        easyMDE.value("Type away, no distractions.");
+        document.querySelector('#articleTitle').innerText = 'New Article';
+        document.querySelector('#publishArticle').style.display = 'inline-block';
+        document.querySelector('#publishArticleAnon').style.display = 'inline-block';
+    }
+    else if(EDITORSTATE === 'MEDIUM') {
+        document.querySelector('#articleTitle').innerText = 'New Medium Article';
+        document.querySelector('#publishArticle').style.display = 'inline-block';
+        document.querySelector('#publishArticleAnon').style.display = 'inline-block';
+    }
+    else if(EDITORSTATE === 'RESUME') {
+        document.querySelector('#articleTitle').innerText = articleData.title;
+        document.querySelector('#updateArticle').style.display = 'inline-block';
+    }
+
+}
+
+function updateArticle(){
+    updateArticleData(articleData.ID.toString(),document.querySelector('#articleTitle').innerText,easyMDE.value());
 }
 
 async function hashToMarkdown(_ipfsHash){
@@ -54,4 +95,16 @@ async function hashToMarkdown(_ipfsHash){
     let result = await promise;
     result = buffer.Buffer(result).toString();
     return result;
+}
+
+
+function importFromMedium(){
+    var link = prompt("Enter a Medium Article Link");
+    if (link !== null){
+        window.location=`./editor.html?import=${link}`;
+    }
+}
+
+function resetEditor(){
+    window.location=`./editor.html?id=0`;
 }

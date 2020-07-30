@@ -977,6 +977,24 @@ async function claimPseudonym(_name) {
     return result;
 }
 
+async function updateArticleData(_articleID, _title, _datahash) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.updateArticleData(_articleID, _title, _datahash)
+        .send({from:web3.currentProvider.selectedAddress}, function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
 async function createArticle(_published, _dataHash, _isPaid, _cost, _category) {
 
     let promise = new Promise((res, rej) => {
