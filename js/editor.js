@@ -1,5 +1,7 @@
 var easyMDE;
 var EDITORSTATE;
+var node;
+
 async function init(){
 
     if (getParameterByName('id') !== null ) {
@@ -35,6 +37,11 @@ async function init(){
     else{
         setupEditor('NEW');
     };
+
+    node = await Ipfs.create({ repo: 'ipfs-' + Math.random() });
+    window.node = node;
+    const status = node.isOnline() ? 'online' : 'offline';
+    console.log(`Node status: ${status}`);
 
 
 }
@@ -73,11 +80,13 @@ function setupEditor(EDITORSTATE, text = null){
         document.querySelector('#articleTitle').innerText = articleData.title;
         document.querySelector('#updateArticle').style.display = 'inline-block';
     }
+    hideLoader();
 
 }
 
-function updateArticle(){
-    updateArticleData(articleData.ID.toString(),document.querySelector('#articleTitle').innerText,easyMDE.value());
+async function updateArticle(){
+    let ipfsHash = await storeMarkdown(easyMDE.value())
+    updateArticleData(articleData.ID.toString(),document.querySelector('#articleTitle').innerText,ipfsHash);
 }
 
 async function hashToMarkdown(_ipfsHash){
@@ -107,4 +116,9 @@ function importFromMedium(){
 
 function resetEditor(){
     window.location=`./editor.html?id=0`;
+}
+
+async function storeMarkdown (text) {
+    let data = await node.add(text);
+    return data.path;
 }

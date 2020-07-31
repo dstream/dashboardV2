@@ -883,7 +883,7 @@ async function getArticle(_articleID) {
 function calcNameCost(name){
     let _length = name.length;
     let costMultiplier = 100;
-    if(_length > 10){
+    if(_length > 10 || _length <=0){
         return 0;
     }
     else{

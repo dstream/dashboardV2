@@ -1,8 +1,13 @@
 function init(){
+    document.querySelector("#newNameVal").addEventListener("input", ()=>{
+        let cost = calcNameCost(document.querySelector("#newNameVal").value);
+        document.querySelector("#nameCost").innerText = parseFloat(cost).toFixed(2);
+    });
     refreshUI();
 }
 
 async function refreshUI(){
+
     let dArticlesList = document.getElementById('dArticlesList');
     let lastArticleID = await getLastArticleID();
 
@@ -29,4 +34,8 @@ async function refreshUI(){
         dArticlesList.innerHTML+=videoHTML;
     }
     filterEnable();
+}
+
+function claimName () {
+    claimPseudonym(document.querySelector("#newNameVal").value);
 }

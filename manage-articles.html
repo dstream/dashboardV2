@@ -60,6 +60,9 @@
 									  <a class="nav-link" href="./call.html">Call</a>
 									</li>
 								</ul>
+								<a class="btn btn-blue" href="./editor.html?id=0" title="Create A New Article">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path stroke="white" fill="white" d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+								</a>
 								<div>
 									<a class="btn btn-blue" href="./account.html">Your Account</a>
 								</div>
@@ -103,11 +106,37 @@
 							-->
 						</div>
 					</div>
-                </div>
+				</div>
+				<h2 class="title text-white" style="text-align:center;">Get a Pseudonym</h2>
+				<div class="services" style=" padding: 20px 0 40px; ">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-4">
+								<div class="services-item">
+									<div class="services-title">
+										<h2>
+											Claim a name <br/>
+										</h2>
+										<p style="font-size: small;line-height: 1;">
+											<span>This name will be shown on all your articles and CANNOT be changed.</span>
+											<br/>
+											<span>ENS Addresses are automatically resolved so you don't need to get a new Pseudonym</span>
+										</p>
+									</div>
+									<div>
+										<input class="form-control" type="text" id="newNameVal" placeholder="Enter Pseudonym">
+									</div>
+									<p>Cost : <span id="nameCost">0</span> ETH</p>
+									<a class="btn btn-white" onclick="claimName()">Claim</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
                 <div class="write">
                     <div class="container">
                       <div class="title">Got something to Share?<br/>Make it <em><u>Unstoppable</u></em> with Libertas.</div>
-                      <a href="#" class="btn btn-md btn-blue">Share Now</a>
+                      <a href="./editor.html?id=0" class="btn btn-md btn-blue">Write Now</a>
                     </div>
                   </div>
 			</div>

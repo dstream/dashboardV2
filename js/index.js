@@ -77,23 +77,29 @@ window.addEventListener('load', async () => {
 async function requireLogin(){
 
     if (window.ethereum != undefined){
-        await ethereum.request({ method: 'eth_requestAccounts' });
+        let accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        if(!biconomy.isLogin) {
+            await biconomyLogin(accounts[0]);
+        }
     }
     else{
         await web3.currentProvider.enable();
+        if(!biconomy.isLogin) {
+            await biconomyLogin();
+        }
     }
 
-    if(!biconomy.isLogin) {
-        await biconomyLogin();
-    }
+
 }
 
-async function biconomyLogin(){
+async function biconomyLogin(account = null){
 	let promise = new Promise(async (res, rej) => {
 
 		try{
             // let userAddress = await web3.eth.getAccounts().then((data)=>{return data[0]});
-			biconomy.login(web3.currentProvider.selectedAddress, (error, response) => {
+            let userAddress = account === null ? web3.currentProvider.selectedAddress : account;
+            console.log('Logging into Bcnmy', userAddress);
+			biconomy.login(userAddress, (error, response) => {
 				if(response.userContract) {
 					console.log("Existing User Contract: " + response.userContract);
 					res(true);

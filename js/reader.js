@@ -29,8 +29,13 @@ async function refreshUI(){
     document.querySelector('#author').innerText = 'By ' + formatAddress(data.controller);
 
     let markdown = await hashToMarkdown(data.dataHash);
+    const searchRegExp = /\n/gi;
+    const replaceWith = '\n\n';
+    const result = markdown.replace(searchRegExp, replaceWith);
+    console.log(result);
+
     let md = new markdownit();
-    let markdownHTML = md.render(markdown);
+    let markdownHTML = md.render(result);
     document.querySelector('#dArticle').innerHTML = markdownHTML;
     hideLoader();
 
