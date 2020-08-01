@@ -122,3 +122,55 @@ async function storeMarkdown (text) {
     let data = await node.add(text);
     return data.path;
 }
+
+
+async function publishArticle(){
+    let ipfsHash = await storeMarkdown(easyMDE.value())
+    if (document.querySelector('#isPaid').checked == true) {
+        createArticle(
+            document.querySelector('#isDraft').checked,
+            document.querySelector('#articleTitle').innerText,
+            ipfsHash,
+            0,
+            0,
+            1);
+    }
+    else{
+        createArticle(
+            document.querySelector('#isDraft').checked,
+            document.querySelector('#articleTitle').innerText,
+            ipfsHash,
+            true,
+            parseFloat(document.querySelector('#costInputFrame').value),
+            1);
+    }
+}
+
+
+async function publishArticleAnon(){
+    let ipfsHash = await storeMarkdown(easyMDE.value())
+    createArticleAnonymous(document.querySelector('#articleTitle').innerText,ipfsHash,1);
+}
+
+function toggleCostFrame(){
+    if (document.querySelector('#isPaid').checked == true){
+        document.querySelector('#costLabelFrame').style.display = 'inline-block';
+        document.querySelector('#costInputFrame').style.display = 'inline-block';
+        document.querySelector('#publishArticleAnon').classList.add('disabled');
+    }
+    else if (document.querySelector('#isPaid').checked == false) {
+        document.querySelector('#costLabelFrame').style.display = 'none';
+        document.querySelector('#costInputFrame').style.display = 'none';
+        document.querySelector('#publishArticleAnon').classList.remove('disabled');
+    }
+}
+
+
+function handleDraftChange(){
+    if (document.querySelector('#isDraft').checked == true){
+        document.querySelector('#publishArticleAnon').classList.add('disabled');
+    }
+    else if (document.querySelector('#isDraft').checked == false) {
+        document.querySelector('#publishArticleAnon').classList.remove('disabled');
+    }
+}

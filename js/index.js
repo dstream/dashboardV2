@@ -5,6 +5,10 @@ let LibertasArticlesContract;
 let Biconomy = window.Biconomy;
 let biconomy;
 
+if (typeof window.ethereum !== 'undefined') {
+    ethereum.autoRefreshOnNetworkChange = false;
+}
+
 // Change Favicon based on the system theme.
 document.addEventListener("DOMContentLoaded", ()=>{
     matcher = window.matchMedia('(prefers-color-scheme: dark)');
@@ -20,10 +24,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 
 window.addEventListener('load', async () => {
-
-    if (typeof window.ethereum !== 'undefined') {
-        ethereum.autoRefreshOnNetworkChange = false;
-    }
 
     if (window.web3) {
 

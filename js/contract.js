@@ -995,11 +995,47 @@ async function updateArticleData(_articleID, _title, _datahash) {
     return result;
 }
 
-async function createArticle(_published, _dataHash, _isPaid, _cost, _category) {
+async function createArticle(_published, _title, _dataHash, _isPaid, _cost, _category) {
 
     let promise = new Promise((res, rej) => {
-        LibertasArticlesContract.methods.claimPseudonym(_published, _dataHash, _isPaid, _cost, _category)
-        .send({from:web3.currentProvider.selectedAddress, value: web3.utils.toWei(_cost, 'ether')}, function(error, result) {
+        LibertasArticlesContract.methods.createArticle(_published, _title, _dataHash, _isPaid, _cost, _category)
+        .send({from:web3.currentProvider.selectedAddress}, function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
+async function createArticleAnonymous( _title, _datahash, _category) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.createArticleAnonymous( _title, _datahash, _category)
+        .send({from:web3.currentProvider.selectedAddress}, function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
+async function tipArticle(_articleID, _amt) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.tipArticle(_articleID)
+        .send({from:web3.currentProvider.selectedAddress, value: web3.utils.toWei(_amt, 'ether')}, function(error, result) {
             if (!error)
                 res(result);
             else{

@@ -10,17 +10,22 @@ async function refreshUI(){
   if (window.existingCall){
     window.existingCall.close()
   }
-  let peer = new Peer({ debug: 3, config: {'iceServers': [
-    { url: 'stun:stun.ekiga.net' },
-    { url: 'stun:stun1.l.google.com:19302' },
-    { url: 'stun:stun2.l.google.com:19302' },
-    { url: 'stun:stun3.l.google.com:19302' },
-    { url: 'stun:stun4.l.google.com:19302' },
-    { url: 'stun:stun01.sipphone.com' },
-    { url: 'stun:stun.l.google.com:19302' }
-    ]}
-  });
+  // let peer = new Peer({ debug: 3, config: {'iceServers': [
+  //   { url: 'stun:stun.ekiga.net' },
+  //   { url: 'stun:stun1.l.google.com:19302' },
+  //   { url: 'stun:stun2.l.google.com:19302' },
+  //   { url: 'stun:stun3.l.google.com:19302' },
+  //   { url: 'stun:stun4.l.google.com:19302' },
+  //   { url: 'stun:stun01.sipphone.com' },
+  //   { url: 'stun:stun.l.google.com:19302' }
+  //   ]}
+  // });
   // var peer = new Peer();
+  var peer = new Peer('someid', {
+    secure: true,
+    host: 'pjs-server.herokuapp.com',
+    port: 443,
+  });
 
   console.log(peer);
   peer.on('open', function(){

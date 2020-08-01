@@ -81,3 +81,11 @@ async function hashToMarkdown(_ipfsHash){
     result = buffer.Buffer(result).toString();
     return result;
 }
+
+async function tip(){
+    var amt = prompt("Enter Amount in ETH");
+
+    if (amt != null) {
+        tipArticle(page_aid, amt);
+    }
+}
