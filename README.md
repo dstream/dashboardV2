@@ -36,7 +36,7 @@
 - Libertas allows creators to share their articles, free or paid.
 - Libertas has full support for Markdown.
 - These articles can be published under a name (pseudonymously) or anonymously.
-
+- Your Articles from other platforms like Medium can also be imported to Libertas directly and made unstoppable with two clicks.
 
 ### 🔐 Governance
 - Content on Libertas can be disabled from earning and being shown on the UI by a public vote.

@@ -23,6 +23,7 @@ async function onPlayVideo(){
     let watchStatus = await hasWatchedVideo(web3.currentProvider.selectedAddress, page_vid);
     if (watchStatus == false && localTxnFired == false){
         vid.pause();
+        await requireLogin();
         let res = await watchVideo(page_vid);
         console.log("Video watch txn result: ", res);
         if(res == true){
