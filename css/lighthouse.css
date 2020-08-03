@@ -268,7 +268,7 @@
 }
 
 body {
-  font-family: 'Asap', sans-serif;
+  font-family: 'Roboto', serif;
   font-size: 18px;
   color: #2B292D;
   background: #000;
@@ -355,7 +355,7 @@ h6 {
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 2px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 22px;
   color: #000;
 }
@@ -663,7 +663,7 @@ textarea.form-control {
 }
 
 .navbar-title {
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 26px;
   font-weight: 700;
   color: #fff;
@@ -828,7 +828,7 @@ textarea.form-control {
 
 .main-title {
   margin-bottom: 28px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.14286;
@@ -878,7 +878,7 @@ textarea.form-control {
 
 .title {
   margin-bottom: 20px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11111;
@@ -1409,7 +1409,7 @@ textarea.form-control {
 }
 
 .blog-title {
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.125;
@@ -1712,7 +1712,7 @@ textarea.form-control {
 .work-title {
   max-width: 786px;
   margin-bottom: 40px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11111;
@@ -1729,7 +1729,7 @@ textarea.form-control {
 
 .work-content p {
   margin-bottom: 30px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 24px;
   line-height: 1.5;
 }
@@ -1899,7 +1899,7 @@ textarea.form-control {
 }
 
 .next-title {
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.125;
@@ -1963,7 +1963,7 @@ textarea.form-control {
 
 .wedo-title {
   margin-bottom: 22px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 700;
   color: black;
@@ -2024,7 +2024,7 @@ textarea.form-control {
 
 .quote-content {
   margin-bottom: 34px;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-style: italic;
   color: black;
@@ -2053,7 +2053,7 @@ textarea.form-control {
 }
 
 .contacts-content {
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 26px;
   line-height: 1.30769;
 }
@@ -2083,7 +2083,7 @@ textarea.form-control {
 .article-content {
   max-width: 750px;
   margin: 0 auto;
-  font-family: 'Alegreya', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 26px;
   line-height: 1.46154;
 }
