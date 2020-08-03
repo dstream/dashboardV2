@@ -89,3 +89,22 @@ async function tip(){
         tipArticle(page_aid, amt);
     }
 }
+
+
+async function copylink(){
+    let btn = document.querySelector('#copyLinkBtn');
+    if (copyToClipboard(window.location.href) === true){
+        btn.innerText = "✔ Copied";
+        setTimeout(()=>{
+            btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
+            Copy Link`;
+        },1500);
+    }
+    else {
+        btn.innerText = "Error";
+        setTimeout(()=>{
+            btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
+            Copy Link`;
+        },1500);
+    }
+}
