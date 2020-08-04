@@ -67,7 +67,7 @@ Click to [Download](https://github.com/dstream/dashboardV2/archive/master.zip) t
 
 ### 2. Unzip and enter directory.
 
-### 3. Run a local webserver
+### 3. Run a local webserver.
 
 3.1. Included Webserver
   1. On Windows - in the project folder, run `webserver <location> <port>`. Example,
