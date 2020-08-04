@@ -9,20 +9,6 @@ if (typeof window.ethereum !== 'undefined') {
     ethereum.autoRefreshOnNetworkChange = false;
 }
 
-// Change Favicon based on the system theme.
-document.addEventListener("DOMContentLoaded", ()=>{
-    matcher = window.matchMedia('(prefers-color-scheme: dark)');
-    let lightSchemeIcon = document.querySelector('link#light-scheme-icon');
-    let darkSchemeIcon = document.querySelector('link#dark-scheme-icon');
-    if (matcher.matches) {
-        lightSchemeIcon.remove();
-        document.head.append(darkSchemeIcon);
-    } else {
-        document.head.append(lightSchemeIcon);
-        darkSchemeIcon.remove();
-    }
-});
-
 window.addEventListener('load', async () => {
 
     if (window.web3) {
