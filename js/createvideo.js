@@ -7,7 +7,13 @@ async function init(){
 
     document.getElementById('uploadVideo').addEventListener('click', uploadVideo);
     document.getElementById('uploadPoster').addEventListener('click', uploadPoster);
+
+    window.lastPosterHash = null;
+    window.lastVideoHash = null;
+    window.lastVideoLength = null;
+
     refreshUI();
+
 
 }
 
@@ -125,3 +131,24 @@ async function addFile (files) {
     }
 }
 
+
+async function publishVideo(){
+
+    if(window.lastPosterHash !== null &&
+        window.lastVideoHash !== null &&
+        window.lastVideoLength !== null)
+    {
+        createVideo(
+            lastVideoHash,
+            lastPosterHash,
+            document.querySelector('#videoTitle').value,
+            document.querySelector('#videoDesc').value,
+            lastVideoLength,
+            document.querySelector('#videoCat').value
+        )
+    }
+    else{
+        alert('Something is Missing 🤔');
+    }
+
+}

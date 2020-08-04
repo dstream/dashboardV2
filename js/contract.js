@@ -160,6 +160,24 @@ async function watchVideo(_vid){
     return result;
 }
 
+async function createVideo(_videoHash, _thumbnailHash, _title, _description, _duration, _category) {
+
+    let promise = new Promise((res, rej) => {
+        LibertasArticlesContract.methods.createVideo(_videoHash, _thumbnailHash, _title, _description, _duration, _category)
+        .send({from:web3.currentProvider.selectedAddress}, function(error, result) {
+            if (!error)
+                res(result);
+            else{
+                rej(error);
+            }
+        });
+
+    });
+
+    let result = await promise;
+    return result;
+}
+
 async function updateStream(_connID,_isPaid,_duration,_rate,_title,_desc){
     let promise = new Promise((res, rej) => {
 
@@ -232,6 +250,7 @@ async function subscribe(_address){
             if (!error)
                 res(true);
             else{
+                console.log(error);
                 rej(false);
             }
         });
@@ -594,7 +613,6 @@ async function hasWatchedVideo(_address, _videoID){
     let result = await promise;
     return result;
 }
-
 
 async function watchedVideo(_videoID){
     let promise = new Promise((res, rej) => {
@@ -998,7 +1016,7 @@ async function updateArticleData(_articleID, _title, _datahash) {
 async function createArticle(_published, _title, _dataHash, _isPaid, _cost, _category) {
 
     let promise = new Promise((res, rej) => {
-        LibertasArticlesContract.methods.createArticle(_published, _title, _dataHash, _isPaid, _cost, _category)
+        LibertasArticlesContract.methods.createArticle(_published, _title, _dataHash, _isPaid, _cost.toString(), _category.toString())
         .send({from:web3.currentProvider.selectedAddress}, function(error, result) {
             if (!error)
                 res(result);

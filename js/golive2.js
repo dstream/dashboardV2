@@ -25,5 +25,9 @@ async function updateStreamData(){
     let title = document.getElementById("streamTitle").value;
     let desc = document.getElementById("streamDesc").value;
 
-    updateStream( connID, isPaid, duration, rate, title, desc)
+    updateStream( connID, isPaid, duration, rate, title, desc);
+}
+
+function copyID() {
+    copyToClipboard(document.querySelector('#my-id').innerText);
 }

@@ -126,7 +126,7 @@ async function storeMarkdown (text) {
 
 async function publishArticle(){
     let ipfsHash = await storeMarkdown(easyMDE.value())
-    if (document.querySelector('#isPaid').checked == true) {
+    if (document.querySelector('#isPaid').checked === false) {
         createArticle(
             document.querySelector('#isDraft').checked,
             document.querySelector('#articleTitle').innerText,
@@ -135,7 +135,7 @@ async function publishArticle(){
             0,
             1);
     }
-    else{
+    else {
         createArticle(
             document.querySelector('#isDraft').checked,
             document.querySelector('#articleTitle').innerText,
